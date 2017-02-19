@@ -20,6 +20,17 @@
         10年後<br>{{ calc() | number }}円
       </p>
 
+      <!-- クリアボタン -->
+      <p>
+        <button class="btn btn-warning btn-block myButton" (click)="clear()">クリアボタン
+        </button>
+      </p>
+      <!-- 保存ボタン -->
+      <p>
+        <button class="btn btn-success btn-block myButton" [disabled]="!(initValue && rate)" (click)="save()">保存
+        </button>
+      </p>
+
       <!-- 明細表示 -->
       <table class="table table-bordered table-striped">
         <tr *ngFor="let value of calcArray(); let i = index">
